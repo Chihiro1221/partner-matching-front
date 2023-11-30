@@ -3,7 +3,7 @@ import { ref } from 'vue';
 import { createTeam, getTeamById, updateTeam } from '../apis/team';
 import { showFailToast } from 'vant';
 import { useRoute, useRouter } from 'vue-router';
-import * as dayjs from 'dayjs';
+import dayjs from 'dayjs';
 import { computed } from '@vue/reactivity';
 import { TeamType } from '../types/models';
 

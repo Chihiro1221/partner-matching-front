@@ -57,7 +57,7 @@
 import {TeamType} from '../types/models';
 import TeamAvatar from '../assets/images/team_avatar.png';
 import {TeamStatusEnum, TeamStatusEnumText} from '../constant/TeamStatusEnumText';
-import * as dayjs from 'dayjs';
+import dayjs from 'dayjs';
 import {dissolveTeam, joinTeam, quitTeam} from '../apis/team';
 import {showFailToast, showSuccessToast} from 'vant';
 import {useUserStore} from "../store/userStore";

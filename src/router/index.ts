@@ -1,4 +1,4 @@
-import {createRouter, createWebHistory, useRouter} from 'vue-router';
+import {createRouter, createWebHashHistory, useRouter} from 'vue-router';
 import teamList from '../views/team-list.vue';
 import teamEdit from '../views/team-edit.vue';
 import userVue from '../views/user.vue';
@@ -13,7 +13,7 @@ import teamCreatedVue from '../views/team-created.vue';
 import teamJoinedVue from '../views/team-joined.vue';
 
 const router = createRouter({
-    history: createWebHistory(),
+    history: createWebHashHistory(),
     routes: [
         {
             path: '/',
