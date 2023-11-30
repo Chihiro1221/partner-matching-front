@@ -1,9 +1,15 @@
 <script setup lang="ts">
-import BasicLayout from "./layouts/basic-layout.vue";
+import BasicLayout from './layouts/basic-layout.vue';
 </script>
 
 <template>
-  <BasicLayout/>
+  <div class="app-container">
+    <BasicLayout />
+  </div>
 </template>
 
-<style scoped></style>
+<style scoped lang="scss">
+.app-container {
+  padding-bottom: 50px;
+}
+</style>

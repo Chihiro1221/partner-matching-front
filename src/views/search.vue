@@ -2,10 +2,14 @@
 import {ref} from "vue";
 import {useRouter} from "vue-router";
 
+type TagType = {
+  id: number;
+  name: string
+}
 const router = useRouter();
 const searchValue = ref('');
 // 所有已选标签
-const selectedTag = ref([]);
+const selectedTag = ref<TagType[]>([]);
 const originTags = ref([
   {id: 1, name: '大一'},
   {id: 2, name: '大二'},
@@ -22,7 +26,7 @@ const tagActiveColor = {
   color: "#f5f6f8",
   textColor: "#111"
 }
-const onSearch = (val) => {
+const onSearch = (val: string) => {
   if (val === '') return tags.value = originTags.value
   tags.value = originTags.value.filter(t => t.name.includes(val));
 }
@@ -43,7 +47,7 @@ const isExist = (tag: any) => {
  * 选择标签
  * @param tag
  */
-const selectTag = (tag: any) => {
+const selectTag = (tag: TagType) => {
   if (isExist(tag)) {
     return selectedTag.value = selectedTag.value.filter(t => t.id !== tag.id);
   }

@@ -1,10 +1,4 @@
-export type Response<T> = {
-  code: number;
-  message: string;
-  data?: T;
-};
-
-export type User = {
+export type UserType = {
   id?: number;
   username?: string;
   nickname?: string;
@@ -24,4 +18,19 @@ export type User = {
   tags?: string | string[];
   // 个人介绍
   introduction?: string;
+};
+
+export type TeamType = {
+  id?: number;
+  userId?: number;
+  name?: string;
+  description?: string;
+  maxNum?: number;
+  status?: number;
+  expireTime?: string;
+  createTime?: Date;
+  updateTime?: Date;
+  createUser?: UserType;
+  password?: string;
+  users?: number[];
 };

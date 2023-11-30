@@ -1,5 +1,5 @@
-import axios, {AxiosRequestConfig} from "axios";
-import {Response} from "../types/models";
+import {Response} from '../types/types';
+import axios, {AxiosRequestConfig} from 'axios';
 
 export default class Axios {
     private instance;
@@ -45,6 +45,10 @@ export default class Axios {
                 return response;
             },
             error => {
+                // console.log(location)
+                // if(error.response.status === 401){
+                //     location.href = `/user/login?redirect=${location.pathname}`
+                // }
                 // switch (error.response?.code) {
                 //     case 401:
                 //         utils.store.remove(cacheEnum.TOKEN_NAME);

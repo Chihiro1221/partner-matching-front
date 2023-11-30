@@ -1,11 +1,12 @@
 <script setup lang="ts">
 import {ref} from 'vue';
-import {getUserInfo, login, UserLogin} from "../apis/user";
+import {login, UserLogin} from "../apis/user";
 import {showFailToast} from "vant";
-import {useRouter} from "vue-router";
+import {useRoute, useRouter} from "vue-router";
 import {useUserStore} from "../store/userStore";
 
 const router = useRouter();
+const route = useRoute();
 const username = ref('');
 const userStore = useUserStore();
 const password = ref('');
@@ -15,7 +16,8 @@ const onSubmit = async (values: UserLogin) => {
     return showFailToast(response.message);
   }
   await userStore.getUserInfo()
-  router.replace("/")
+
+  router.replace((route.query.redirect as string) ?? "/")
 };
 </script>
 
